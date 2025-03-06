@@ -14,6 +14,7 @@ export default function Navbar() {
           <Link href={'/'} className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الرئيسية</Link>
           <li className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الدورات</li>
           <li className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الاسعار</li>
+          <Link href={'/about'} className="cursor-pointer transition-colors duration-300 hover:text-blue-600">من نحن </Link>
           <Link href={'/contact'} className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الاتصال بنا</Link>
           <li className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الامتحانات</li>
         </ul>
