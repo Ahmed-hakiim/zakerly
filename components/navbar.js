@@ -1,5 +1,6 @@
 import logo from '@/public/images/logo.jpg'
 import Image from 'next/image';
+import Link from 'next/link';
 export default function Navbar() {
     return (
       <nav className="flex items-center font-[Cairo] justify-between bg-white p-4 " dir="rtl">
@@ -9,10 +10,11 @@ export default function Navbar() {
         </div>
   
         {/* Center - Navigation Links */}
-        <ul className="flex gap-4 text-lg font-semibold justify-center items-center lg:mr-10" style={{color:"#263054"}}>
+        <ul className="flex gap-8 text-lg font-semibold justify-center items-center lg:mr-10" style={{color:"#263054"}}>
+          <Link href={'/'} className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الرئيسية</Link>
           <li className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الدورات</li>
           <li className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الاسعار</li>
-          <li className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الاتصال بنا</li>
+          <Link href={'/contact'} className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الاتصال بنا</Link>
           <li className="cursor-pointer transition-colors duration-300 hover:text-blue-600">الامتحانات</li>
         </ul>
   

@@ -6,6 +6,8 @@ import createive from '@/public/images/creative-process.png'
 import educational from '@/public/images/educational.png'
 import check from '@/public/images/check.png'
 import kid from '@/public/images/kid.png'
+import tele from '@/public/images/tele.png'
+import one from '@/public/images/one.png'
 import { info, infoFive, infoFour, infoSix, infoThree, infoTwo } from "@/lib/dummyData";
 import StudentsSlider from "@/components/slider";
 
@@ -117,7 +119,14 @@ export default function Home() {
             <button className=" p-2 rounded-lg" style={{backgroundColor:"#1068B0"}}>سجل الان</button>
           </div>
         </div>
-        <div className="bg-[url('/images/leftbg.png')] flex flex-col gap-4">
+        <div className="flex items-end">
+          <Image src={one} className="size-32" />
+        </div>
+        
+        <div className=" flex flex-col gap-4 relative p-4 py-16 pb-16 bg-cover bg-no-repeat bg-center"
+        style={{  
+          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("https://s3-alpha-sig.figma.com/img/1cb8/5b19/cd6c14d5c27aad382d2e0707ca55816e?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=qkKbxCqVK82BBK4CWMW~5luCYk8nO8971OPn6DsgNs3E6vL9zGwUh3vlzC7BKOItGTaULcCyGYtzUaz7HU5oyiFqlV0XJNrR3ke9NSkg2wOqfVBO8K0BlG~vdA~yvy~O6hKbAX4N~kU33OY9eRW13DGG~gUXbPbu8n71FMlh7Ch9v8UG7hJ6JOqW1Wd2CfAN~ai5ySDbjZjP-u4nIRjT88vYndtpe-47YEEUW~YM85t6WIzG7o7UsFRm32TmGvFWHqvl22RaYxieS1XWLmDeXfSXLIjrRTYgjQE7pk43ASx-1X0DV31dNrL7Trh3EgIhOEW8UEe4txT-tngdsv1v9Q__")`}}
+        >
           <div className="flex gap-2">
             <Image src={firstKids} width={300} className="rounded-lg"/>
             <div className="h-[150px] w-[150px] mt-12 shadow-lg flex flex-col items-center justify-center rounded-lg bg-white">
@@ -133,8 +142,12 @@ export default function Home() {
             <Image src={secondKids} width={300} className="rounded-lg" />
           </div>
         </div>
+        <div className="flex">
+          <Image src={tele} className="size-32" />
+        </div>
       </section>
-      <section style={{backgroundColor:"#FFFDE8"}} className="p-4 pb-16">
+      <section style={{backgroundColor:"#FFFDE8",backgroundImage: "url('/images/shamel.png')"}} className="p-4 pb-16 bg-cover bg-no-repeat bg-center"
+      >
         <h1 className="text-center p-6 mb-4 text-3xl text-indigo-600 font-semibold">كل ما تحتاجه للتعلم والتطور</h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-24 place-items-center">
           {
@@ -170,7 +183,7 @@ export default function Home() {
             {
               infoThree.map((item,index)=>{
                 return(
-                  <div className="rounded-lg shadow-lg  flex flex-col gap-2 p-4 w-3/4 justify-around" style={{backgroundColor:"#F6F9E3 "}} key={index}>
+                  <div  key={index} className="rounded-lg shadow-lg  flex flex-col gap-2 p-4 w-3/4 justify-around" style={{backgroundColor:`${item.bg}`}}>
                     <h2 className="text-xl font-bold flex gap-1" style={{color:"#263054"}}><Image src={check} className="size-8" />{item.name}</h2>
                     <p className="font-medium text-slate-600">{item.description}</p>
                   </div>
