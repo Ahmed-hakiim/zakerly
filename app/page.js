@@ -1,5 +1,6 @@
 import Image from "next/image";
 import leftBg from "@/public/images/leftbg.png";
+import goalsbg from "@/public/images/goalsbg.jpg";
 import firstKids from "@/public/images/firstKids.jpg";
 import secondKids from "@/public/images/secondKids.jpg";
 import createive from "@/public/images/creative-process.png";
@@ -115,7 +116,7 @@ export default function Home() {
         </a>
       </footer> */}
       <section
-        className="bg-blue-200 grid grid-cols-1 lg:grid-cols-2 relative pt-11 pb-11 bg-cover bg-no-repeat bg-center"
+        className="bg-blue-200 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2  pt-11 pb-11 relative bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("https://s3-alpha-sig.figma.com/img/1cb8/5b19/cd6c14d5c27aad382d2e0707ca55816e?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=qkKbxCqVK82BBK4CWMW~5luCYk8nO8971OPn6DsgNs3E6vL9zGwUh3vlzC7BKOItGTaULcCyGYtzUaz7HU5oyiFqlV0XJNrR3ke9NSkg2wOqfVBO8K0BlG~vdA~yvy~O6hKbAX4N~kU33OY9eRW13DGG~gUXbPbu8n71FMlh7Ch9v8UG7hJ6JOqW1Wd2CfAN~ai5ySDbjZjP-u4nIRjT88vYndtpe-47YEEUW~YM85t6WIzG7o7UsFRm32TmGvFWHqvl22RaYxieS1XWLmDeXfSXLIjrRTYgjQE7pk43ASx-1X0DV31dNrL7Trh3EgIhOEW8UEe4txT-tngdsv1v9Q__")`,
         }}
@@ -143,7 +144,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" flex flex-col gap-4 relative p-4 py-16 pb-16 bg-cover bg-no-repeat bg-center">
+        <div className=" flex flex-col gap-4 relative p-4 py-16 pb-16">
           <div className="flex items-end">
             <Image src={one} className="size-32" />
           </div>
@@ -331,12 +332,12 @@ export default function Home() {
         </div>
       </section>
       <section
-        className="relative p-4 py-16 pb-16 bg-cover bg-no-repeat bg-center"
+        className=" p-4 py-16 pb-16 relative bg-cover bg-no-repeat bg-center"
         style={{
-          backgroundImage: "url('/images/polygon.png')",
+          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("https://s3-alpha-sig.figma.com/img/10a0/e215/7522bca42b7706b2a6d640ef9824b539?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=KoaztC7DPzrn6XvjcT~eAlaM1mc009xwzBjO46SFLr8sDslpos2wg1TRw~1kClwVCf-ZaURcT6jc1Re7gLxq7nBfKol7mxS34pD0q-Q6BzoNTZB8CbhiDin4UTkdO-AxwFtLeJAsTPwgtAn85uUK5-tcCs4Is-bcV7i7bi7yqMA2Nn1M24JwiX4bfui054GC9x-JYz4PMU~t6laOtehagJq5lZAPa1UYFZG6Pq4l8M2dd8iUjmsKhmSxG-ZTuviHLLWP~1RTHxjUlfwQ-gYMHINkm7nYgU5i6ZV2zJ~QReR3brKF2cfE0-qyqTIY-JxifG8ZDG4J1jZYC67gJ3I-NQ__")`,
         }}
       >
-        <div className="absolute inset-0 bg-slate-900/70"></div>
+        <div className="absolute inset-0 bg-slate-900/50"></div>
 
         <div className="relative z-10 text-white">
           <h1 className="text-center p-6 text-3xl">أهدافنا</h1>
