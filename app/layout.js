@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
     <html lang="ar" dir="rtl">
       <body className={`${cairo.variable} antialiased`}>
         <Navbar />
-        {children}
+        <main className="mx-auto w-[100%] "> 
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
