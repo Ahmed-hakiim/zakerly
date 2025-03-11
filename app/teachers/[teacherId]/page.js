@@ -6,9 +6,13 @@ import stars from "@/public/images/courses/stars.png";
 import { courses, examTwo, infoSeven } from "@/lib/dummyData";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export default function TeacherDetails({ params }) {
   const singleTeacher = infoSeven.find((item) => item.id == params.teacherId);
+  if (!singleTeacher) {
+    notFound();
+  }
   console.log(singleTeacher);
   return (
     <div>

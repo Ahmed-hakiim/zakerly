@@ -5,6 +5,7 @@ import Carousel from "@/components/carousel";
 import Image from "next/image";
 import { Search } from "lucide-react";
 import { books } from "@/lib/dummyData";
+import Link from "next/link";
 
 export default function Books() {
   return (
@@ -52,9 +53,12 @@ export default function Books() {
 
               {/* Product Details */}
               <div className="flex flex-col items-end">
-                <h3 className="text-gray-800 font-semibold mt-2">
+                <Link
+                  href={`/books/${item.id}`}
+                  className="text-gray-800 font-semibold mt-2 cursor-pointer hover:text-indigo-600"
+                >
                   {item.title}
-                </h3>
+                </Link>
 
                 {/* Pricing */}
                 <div className="flex items-center gap-2 mt-1">

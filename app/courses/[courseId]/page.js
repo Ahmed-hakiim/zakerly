@@ -7,9 +7,13 @@ import pay from "@/public/images/courses/pay.png";
 
 import { courses } from "@/lib/dummyData";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export default function CourseInfo({ params }) {
   const singleCourse = courses.find((item) => item.id == params.courseId);
+  if (!singleCourse) {
+    notFound();
+  }
   //   console.log(singleCourse);
   return (
     <div className="mx-auto w-[90%] grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 py-6 gap-3">
