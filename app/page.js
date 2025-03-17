@@ -31,7 +31,7 @@ export default function Home() {
       <section
         className="bg-blue-200 flex justify-center items-center pt-11 pb-11 relative bg-cover bg-no-repeat bg-center"
         style={{
-          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("https://s3-alpha-sig.figma.com/img/1cb8/5b19/cd6c14d5c27aad382d2e0707ca55816e?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=qkKbxCqVK82BBK4CWMW~5luCYk8nO8971OPn6DsgNs3E6vL9zGwUh3vlzC7BKOItGTaULcCyGYtzUaz7HU5oyiFqlV0XJNrR3ke9NSkg2wOqfVBO8K0BlG~vdA~yvy~O6hKbAX4N~kU33OY9eRW13DGG~gUXbPbu8n71FMlh7Ch9v8UG7hJ6JOqW1Wd2CfAN~ai5ySDbjZjP-u4nIRjT88vYndtpe-47YEEUW~YM85t6WIzG7o7UsFRm32TmGvFWHqvl22RaYxieS1XWLmDeXfSXLIjrRTYgjQE7pk43ASx-1X0DV31dNrL7Trh3EgIhOEW8UEe4txT-tngdsv1v9Q__")`,
+          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("/images/homebg.jpg")`,
         }}
       >
         <motion.div
