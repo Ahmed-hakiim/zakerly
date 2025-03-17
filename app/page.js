@@ -29,12 +29,18 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section
-        className="bg-blue-200 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 pt-11 pb-11 relative bg-cover bg-no-repeat bg-center"
+        className="bg-blue-200 flex justify-center items-center pt-11 pb-11 relative bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("https://s3-alpha-sig.figma.com/img/1cb8/5b19/cd6c14d5c27aad382d2e0707ca55816e?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=qkKbxCqVK82BBK4CWMW~5luCYk8nO8971OPn6DsgNs3E6vL9zGwUh3vlzC7BKOItGTaULcCyGYtzUaz7HU5oyiFqlV0XJNrR3ke9NSkg2wOqfVBO8K0BlG~vdA~yvy~O6hKbAX4N~kU33OY9eRW13DGG~gUXbPbu8n71FMlh7Ch9v8UG7hJ6JOqW1Wd2CfAN~ai5ySDbjZjP-u4nIRjT88vYndtpe-47YEEUW~YM85t6WIzG7o7UsFRm32TmGvFWHqvl22RaYxieS1XWLmDeXfSXLIjrRTYgjQE7pk43ASx-1X0DV31dNrL7Trh3EgIhOEW8UEe4txT-tngdsv1v9Q__")`,
         }}
       >
-        <div className="flex flex-col gap-4 justify-center lg:mr-20 md:mr-10 mr-8">
+        <motion.div
+          className="flex flex-col gap-4 justify-center lg:mr-20 md:mr-10 mr-8 lg:py-20"
+          initial={{ x: "100%", opacity: 0 }} // Starts from the right and invisible
+          transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+          whileInView={{ x: 0, opacity: 1 }} // Animates when in viewport
+          viewport={{ once: false }}
+        >
           <h1 className="text-white text-3xl">
             أهلا بكم في <br />
             <span className="text-6xl font-semibold mt-2">ذاكرلي</span>
@@ -55,9 +61,16 @@ export default function Home() {
               سجل الان
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col gap-4 relative p-4 py-16 pb-16">
+        {/* <motion.div
+          className="flex flex-col gap-4 relative p-4 py-16 pb-16"
+          initial={{ x: "100%", opacity: 0 }} // Starts from the right and invisible
+          whileInView={{ x: 0, opacity: 1 }} // Animates when in viewport
+          exit={{ x: "100%", opacity: 0 }} // Hides when leaving the viewport
+          transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+          viewport={{ once: false }}
+        >
           <div className="flex items-end">
             <Image src={one} className="size-32" />
           </div>
@@ -74,9 +87,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-2 lg:mr-16">
               <div className="lg:h-[150px] lg:w-[150px] shadow-lg flex flex-col items-center justify-center rounded-lg bg-white hover:scale-105 transition-transform duration-300">
                 <Image src={educational} className="size-16" />
-                <h3 className="font-semibold text-lg text-center">
-                  دروس تعليمية
-                </h3>
+                <h3 className="font-semibold text-lg text-center">دروس تعليمية</h3>
               </div>
               <Image
                 src={secondKids}
@@ -88,7 +99,7 @@ export default function Home() {
           <div className="flex">
             <Image src={tele} className="size-32" />
           </div>
-        </div>
+        </motion.div> */}
       </section>
 
       {/* Features Section */}
@@ -106,10 +117,14 @@ export default function Home() {
           {info.map((item, index) => {
             return (
               <motion.div
-                variants={fadeIn("up", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: false, amount: 0.7 }}
+                // variants={fadeIn("up",0.2)}
+                // initial="hidden"
+                // whileInView={"show"}
+                // viewport={{once:false, amount:0.7}}
+                initial={{ y: 100, opacity: 0 }} // Starts from the bottom and invisible
+                whileInView={{ y: 0, opacity: 1 }} // Animates to its original position
+                transition={{ duration: 0.3, ease: "easeOut" }} // Animation settings
+                viewport={{ once: false }}
                 key={index}
                 className="p-6 rounded-lg flex flex-col gap-6 items-center h-[300px] w-[300px] bg-white shadow-2xl hover:scale-105 transition-transform duration-300"
               >
@@ -126,7 +141,13 @@ export default function Home() {
 
       {/* Courses Section */}
       <section className="p-4 pb-16 grid  grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-around">
-        <div className="flex flex-col gap-4 px-8">
+        <motion.div
+          initial={{ x: "100%", opacity: 0 }} // Starts from the right and invisible
+          whileInView={{ x: 0, opacity: 1 }} // Animates when in viewport
+          transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+          viewport={{ once: false }} // Ensures animation repeats every time the div enters the viewport
+          className="flex flex-col gap-4 px-8"
+        >
           <h2 className="text-2xl font-bold text-indigo-600">
             أكتشف أبرز الدورات
           </h2>
@@ -149,8 +170,12 @@ export default function Home() {
             {" "}
             استكشف المزيد{" "}
           </button>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-y-6">
+        </motion.div>
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }} // Starts smaller and invisible
+          whileInView={{ scale: 1, opacity: 1 }} // Scales up and becomes visible
+          transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+          viewport={{ once: false }} className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-y-6">
           {infoThree.map((item, index) => {
             return (
               <div
@@ -169,13 +194,17 @@ export default function Home() {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </section>
 
       {/* Stats Section */}
-      <section
+      <motion.section
         className="p-4 pb-16 flex justify-around pt-16"
         style={{ backgroundColor: "#FFFDE8" }}
+        initial={{ y: 100, opacity: 0 }} // Starts from the bottom and invisible
+        whileInView={{ y: 0, opacity: 1 }} // Animates to its original position
+        transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+        viewport={{ once: false }}
       >
         <div
           className="flex flex-col gap-4 w-1/2 justify-center"
@@ -210,10 +239,14 @@ export default function Home() {
         <div>
           <Image src={kid} height={400} />
         </div>
-      </section>
+      </motion.section>
 
       {/* How to Start Section */}
-      <section className="p-4 pb-16" style={{ color: "#263054" }}>
+      <motion.section className="p-4 pb-16" style={{ color: "#263054" }}
+        initial={{ scale: 0.8, opacity: 0 }} // Starts smaller and invisible
+        whileInView={{ scale: 1, opacity: 1 }} // Scales up and becomes visible
+        transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+        viewport={{ once: false }}>
         <h1 className="text-center p-6 text-3xl font-bold">
           كيف تبدأ رحلتك مع زاكرلي؟
         </h1>
@@ -233,15 +266,19 @@ export default function Home() {
             );
           })}
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
-      <section
+      <motion.section
         className="p-4 pb-16 bg-cover bg-no-repeat bg-center"
         style={{
           backgroundColor: "#DBE8EA",
           backgroundImage: "url('/images/polygon.png')",
         }}
+        initial={{ x: "100%", opacity: 0 }} // Starts from the right and invisible
+        whileInView={{ x: 0, opacity: 1 }} // Animates when in viewport
+        transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+        viewport={{ once: false }}
       >
         <h1
           className="text-center p-6 text-3xl font-bold"
@@ -257,7 +294,7 @@ export default function Home() {
         <div className="mr-9 mt-9">
           <StudentsSlider />
         </div>
-      </section>
+      </motion.section>
 
       {/* Goals Section */}
       <section
@@ -268,7 +305,11 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-slate-900/50"></div>
 
-        <div className="relative z-10 text-white">
+        <motion.div className="relative z-10 text-white"
+          initial={{ scale: 0.8, opacity: 0 }} // Starts smaller and invisible
+          whileInView={{ scale: 1, opacity: 1 }} // Scales up and becomes visible
+          transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+          viewport={{ once: false }}>
           <h1 className="text-center p-6 text-3xl">أهدافنا</h1>
           <p className="text-center">
             نسعى دائمًا لتطبيق هذه القيم في كل ما نقدمه، من تطوير المحتوى
@@ -288,11 +329,15 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Schools Section */}
-      <section style={{ backgroundColor: "white" }} className="p-4 pb-16">
+      <motion.section style={{ backgroundColor: "white" }} className="p-4 pb-16"
+        initial={{ x: "100%", opacity: 0 }} // Starts from the right and invisible
+        whileInView={{ x: 0, opacity: 1 }} // Animates when in viewport
+        transition={{ duration: 0.8, ease: "easeOut" }} // Animation settings
+        viewport={{ once: false }}>
         <h1
           className="text-center p-8 text-3xl font-bold"
           style={{ color: "#263054" }}
@@ -319,7 +364,7 @@ export default function Home() {
             );
           })}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

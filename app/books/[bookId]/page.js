@@ -21,15 +21,15 @@ export default function SingleBook({ params }) {
             <p>سنة النشر: {book.puplished}</p>
             <p className="flex gap-0.5">
               التصنيف:{" "}
-              {book.genre.map((item) => (
-                <p>{item} ،</p>
+              {book.genre.map((item, index) => (
+                <p key={index}>{item} ،</p>
               ))}{" "}
             </p>
             <p>عدد الصفحات:{book.pages}</p>
             <p className="flex gap-0.5">
               اللغة:{" "}
-              {book.language.map((item) => (
-                <p>{item} /</p>
+              {book.language.map((item, index) => (
+                <p key={index}>{item} /</p>
               ))}{" "}
             </p>
             <p>التقييم :{book.rating}</p>
